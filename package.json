@@ -63,6 +63,6 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run lint-staged"
+    "pre-commit": ". ./lint-stage-each.sh"
   }
 }
