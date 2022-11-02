@@ -115,6 +115,7 @@
       ],
       "react/display-name": "off"
     },
+    "ignorePatterns": [".eslintrc.*", "vite.config.*"],
     "overrides": [
       {
         "files": ["*.tsx"],

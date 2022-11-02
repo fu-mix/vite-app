@@ -23,12 +23,12 @@ stagedProjects=$( \
   grep -E ".*($target)\/" | \
   grep -E "^.*\/.*\.($fileTypes)$" | \
   grep -vE "(package|tsconfig).*\.json" | \
-  sed -r "s/($target)\/.*$//g" | \
+  sed -E "s/($target)\/.*$//g" | \
   uniq \
 )
 
 # execute each lint-staged
-rootDir=$(pwd | sed -r "s/\/\.git\/hooks//")
+rootDir=$(pwd | sed -E "s/\/\.git\/hooks//")
 
 for project in ${stagedProjects[@]}; do
   echo "Executing $project lint-staged entry..."
